@@ -13,3 +13,8 @@ if [ $? -eq 0 ]; then
 else
   echo "Errore durante la rigenerazione dei file statici!"
 fi
+
+
+# dentro il container
+# cd /
+odoo -d [db] -u all --stop-after-init --db_host=db --db_user=odoo --db_password=odoo16@2025
