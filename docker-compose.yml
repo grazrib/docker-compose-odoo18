@@ -12,6 +12,9 @@ services:
         - ./postgresql:/var/lib/postgresql/data
 
   odoo16:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: odoo:16
     user: root
     depends_on:
@@ -28,7 +31,7 @@ services:
     volumes:
       #- /etc/timezone:/etc/timezone:trt
       #- /etc/localtime:/etc/localtime:trt
-      # - ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
+      - ./entrypoint.sh:/entrypoint.sh   
       - ./addons:/mnt/extra-addons
       - ./etc:/etc/odoo
     restart: always             # run as a service
@@ -42,7 +45,7 @@ services:
       - db:db
     environment:
       DEFAULT_USER: admin
-      DEFAULT_PASSWORD: tobemodified
+      DEFAULT_PASSWORD: to_be_modified
      # VIRTUAL_HOST: 
      # LETSENCRYPT_HOST:
      # VIRTUAL_PORT: 5050
