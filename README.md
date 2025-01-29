@@ -106,6 +106,24 @@ docker-compose build
 docker-compose down
 ```
 
+**Stop Odoo**:
+
+``` bash
+docker-compose down
+```
+
+**For import db**:
+
+``` bash
+chmod +x regenerate_static.sh optimize_database.sh
+```
+``` bash
+./regenerate_static.sh
+```
+``` bash
+./optimize_database.sh
+```
+
 # Live chat
 
 In [docker-compose.yml#L21](docker-compose.yml#L21), we exposed port **20015** for live-chat on host.
