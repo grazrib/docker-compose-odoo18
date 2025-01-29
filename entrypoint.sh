@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 # set the postgres database host, port, user and password according to the environment
@@ -13,8 +12,6 @@ set -e
 pip3 install pip --upgrade
 pip3 install -r /etc/odoo/requirements.txt
 
-# sed -i 's|raise werkzeug.exceptions.BadRequest(msg)|self.jsonrequest = {}|g' /usr/lib/python3/dist-packages/odoo/http.py
-
 DB_ARGS=()
 function check_config() {
     param="$1"
@@ -25,6 +22,7 @@ function check_config() {
     DB_ARGS+=("--${param}")
     DB_ARGS+=("${value}")
 }
+
 check_config "db_host" "$HOST"
 check_config "db_port" "$PORT"
 check_config "db_user" "$USER"
@@ -47,5 +45,3 @@ case "$1" in
     *)
         exec "$@"
 esac
-
-exit 1
