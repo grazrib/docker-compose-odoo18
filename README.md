@@ -1,13 +1,13 @@
 # Quick install
 
-Installing Odoo 16 with one command.
+Installing Odoo 18 with one command.
 
 (Supports multiple Odoo instances on one server)
 
 Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run:
 
 ``` bash
-curl -s https://raw.githubusercontent.com/grazrib/docker-compose-odoo16/master/run.sh | sudo bash -s odoo-one 10016 20016
+curl -s https://raw.githubusercontent.com/grazrib/docker-compose-odoo18/master/run.sh | sudo bash -s odoo-one 10018 20018
 ```
 
 to set up first Odoo instance @ `localhost:10015` (default master password: `do_be_modified`)
@@ -15,15 +15,15 @@ to set up first Odoo instance @ `localhost:10015` (default master password: `do_
 and
 
 ``` bash
-curl -s https://raw.githubusercontent.com/grazrib/docker-compose-odoo16/master/run.sh | sudo bash -s odoo-two 11016 21016
+curl -s https://raw.githubusercontent.com/grazrib/docker-compose-odoo18/master/run.sh | sudo bash -s odoo-two 11018 21018
 ```
 
 to set up another Odoo instance @ `localhost:11015` (default master password: `to_be_modified`)
 
 Some arguments:
 * First argument (**odoo-one**): Odoo deploy folder
-* Second argument (**10016**): Odoo port
-* Third argument (**20016**): live chat port
+* Second argument (**10018**): Odoo port
+* Third argument (**20018**): live chat port
 
 If `curl` is not found, install it:
 
@@ -40,11 +40,11 @@ Start the container:
 docker-compose up
 ```
 
-* Then open `localhost:10016` to access Odoo 16.0. If you want to start the server with a different port, change **10016** to another value in **docker-compose.yml**:
+* Then open `localhost:10018` to access Odoo 18.0. If you want to start the server with a different port, change **10018** to another value in **docker-compose.yml**:
 
 ```
 ports:
- - "10016:8069"
+ - "10018:8069"
 ```
 
 Run Odoo container in detached mode (be able to close terminal without stopping Odoo):
@@ -56,7 +56,7 @@ docker-compose up -d
 **If you get the permission issue**, change the folder permission to make sure that the container is able to access the directory:
 
 ``` sh
-$ git clone https://github.com/grazrib/docker-compose-odoo16.git
+$ git clone https://github.com/grazrib/docker-compose-odoo18.git
 $ sudo chmod -R 777 addons
 $ sudo chmod -R 777 etc
 $ mkdir -p postgresql
@@ -136,7 +136,7 @@ Configuring **nginx** to activate live chat feature (in production):
 server {
     #...
     location /longpolling/ {
-        proxy_pass http://0.0.0.0:20016/longpolling/;
+        proxy_pass http://0.0.0.0:20018/longpolling/;
     }
     #...
 }
@@ -145,13 +145,13 @@ server {
 
 # docker-compose.yml
 
-* odoo:16.0
-* postgres:16
+* odoo:18.0
+* postgres:18
 
-# Odoo 16 screenshots
+# Odoo 18 screenshots
 
-<img src="screenshots/2022-10-17_22h16_21.png" width="50%">
+<img src="screenshots/2022-10-17_22h18_21.png" width="50%">
 
-<img src="screenshots/2022-10-17_22h16_30.png" width="100%">
+<img src="screenshots/2022-10-17_22h18_30.png" width="100%">
 
 <
