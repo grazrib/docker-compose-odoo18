@@ -7,7 +7,7 @@ Installing Odoo 18 with one command.
 Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run:
 
 ``` bash
-curl -s https://raw.githubusercontent.com/grazrib/docker-compose-odoo18/master/run.sh | sudo bash -s odoo-one 10018 20018
+curl -s https://raw.githubusercontent.com/grazrib/docker-compose-odoo18/master/run.sh | sudo bash -s odoo18-one 10018 20018
 ```
 
 to set up first Odoo instance @ `localhost:10015` (default master password: `do_be_modified`)
@@ -15,7 +15,7 @@ to set up first Odoo instance @ `localhost:10015` (default master password: `do_
 and
 
 ``` bash
-curl -s https://raw.githubusercontent.com/grazrib/docker-compose-odoo18/master/run.sh | sudo bash -s odoo-two 11018 21018
+curl -s https://raw.githubusercontent.com/grazrib/docker-compose-odoo18/master/run.sh | sudo bash -s odoo18-two 11018 21018
 ```
 
 to set up another Odoo instance @ `localhost:11015` (default master password: `to_be_modified`)
