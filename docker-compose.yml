@@ -39,7 +39,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     ports:
-      - 5050:80
+      - 5051:80
     restart: always
     links:
       - db:db
@@ -48,7 +48,7 @@ services:
       DEFAULT_PASSWORD: to_be_modified
      # VIRTUAL_HOST: 
      # LETSENCRYPT_HOST:
-     # VIRTUAL_PORT: 5050
+     # VIRTUAL_PORT: 5051
     volumes:
       - ./pgadmin-data:/var/lib/pgadmin
       #- /var/run/docker.sock:/tmp/docker.sock
