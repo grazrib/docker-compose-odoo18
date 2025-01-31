@@ -9,7 +9,7 @@ set -e
 : ${PASSWORD:=${DB_ENV_POSTGRES_PASSWORD:=${POSTGRES_PASSWORD:='odoo18@2025'}}}
 
 # install python packages
-pip3 install pip --upgrade
+# pip3 install pip --upgrade
 # pip3 install -r /etc/odoo/requirements.txt
 
 DB_ARGS=()
