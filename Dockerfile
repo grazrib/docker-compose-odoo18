@@ -10,17 +10,13 @@ RUN apt-get update && apt-get install -y \
     libxslt1-dev \
     libldap2-dev \
     libsasl2-dev \
+    python3-phonenumbers \
+    python3-ldap \
+    python3-num2words \
+    python3-dateutil \
+    python3-tz \
+    python3-werkzeug \
     && rm -rf /var/lib/apt/lists/*
-
-# Install Python dependencies
-RUN pip3 install --no-cache-dir \
-    phonenumbers \
-    pyldap \
-    num2words \
-    pdf2image \
-    python-dateutil \
-    pytz \
-    werkzeug
 
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
