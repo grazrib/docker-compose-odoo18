@@ -61,7 +61,7 @@ $ sudo chmod -R 777 addons
 $ sudo chmod -R 777 etc
 $ mkdir -p postgresql
 $ sudo chmod -R 777 postgresql
-$ sudo chown -R 5050:5050 pgadmin-data
+$ sudo chown -R 5051:5051 pgadmin-data
 ```
 
 Increase maximum number of files watching from 8192 (default) to **524288**. In order to avoid error when we run multiple Odoo instances. This is an *optional step*. These commands are for Ubuntu user:
