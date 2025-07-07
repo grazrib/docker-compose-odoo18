@@ -1,11 +1,10 @@
-version: '3.4'
+
 services:
   db:
     image: postgres:14.10
-    user: root
     environment:
       - POSTGRES_USER=odoo
-      - POSTGRES_PASSWORD=odoo18@2025      
+      - POSTGRES_PASSWORD=odoo18@2025
       - POSTGRES_DB=postgres
     restart: always             # run as a service
     volumes:
@@ -16,7 +15,6 @@ services:
       context: .
       dockerfile: Dockerfile
     image: odoo:18
-    user: root
     depends_on:
       - db
     ports:
@@ -29,8 +27,8 @@ services:
       - USER=odoo
       - PASSWORD=odoo18@2025
     volumes:
-      #- /etc/timezone:/etc/timezone:trt
-      #- /etc/localtime:/etc/localtime:trt
+      #- /etc/timezone:/etc/timezone:ro
+      #- /etc/localtime:/etc/localtime:ro
       - ./entrypoint.sh:/entrypoint.sh   
       - ./addons:/mnt/extra-addons
       - ./etc:/etc/odoo
