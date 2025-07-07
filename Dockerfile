@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
     libcups2-dev \
     && rm -rf /var/lib/apt/lists/*
 
-COPY entrypoint.sh /
-RUN chmod +x /entrypoint.sh
+# Copy entrypoint and set executable permissions
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
 
 USER odoo
