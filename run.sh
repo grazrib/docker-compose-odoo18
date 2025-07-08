@@ -171,7 +171,8 @@ data_dir = /etc/odoo
 # | Configurazione HTTP |
 # ==============================
 http_port = 8069
-longpolling_port = 8072
+# longpolling_port = 8072
+gevent_port = 8072
 proxy_mode = $PROXY_MODE_VALUE
 
 # ===============================
